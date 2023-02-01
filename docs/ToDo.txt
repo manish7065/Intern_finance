@@ -1,0 +1,5 @@
+30012023:
+    prepare the schema.yaml file for data validation
+    How to get the data of user serched stock discuss the problem with web developer.
+    for now just store the data in the artifact.
+    
