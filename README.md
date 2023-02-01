@@ -1,5 +1,6 @@
-# lab-conda
+# Finance-project 
+predict the stock price by using  ML/DL 
 
-Command to run demo.py file:
 
-`python demo.py`
+1. fetch the data through API and store it in MongoDB
+2. follow the proper logging and exception as per the industry standard
