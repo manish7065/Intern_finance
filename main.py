@@ -1,5 +1,4 @@
 from flask import Flask, request, render_template
-from finance.entity.artifact_entity import UserSelection
 
 app = Flask(__name__)
 
@@ -11,7 +10,6 @@ def index():
 def result():
     data = request.form
     option = data["options"]
-    UserSelection(stock_name=option)
 
     return render_template("result.html", option=option)
 
