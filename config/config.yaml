@@ -1,0 +1,3 @@
+training_pipeline_config:
+  pipeline_name : "stocks"
+  artifact_dir : "artifact"

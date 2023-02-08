@@ -3,3 +3,14 @@
     How to get the data of user serched stock discuss the problem with web developer.
     for now just store the data in the artifact.
     
+07022023:
+    working on:
+        reading the yaml file
+        creating utils for common functionalities
+08022023:
+    Stock data has been downloaded and saved to artifact sucessfully.
+    ToDo:
+        Transform data to DataFeame
+        split the data
+        
+        
