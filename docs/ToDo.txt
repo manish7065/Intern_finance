@@ -12,5 +12,7 @@
     ToDo:
         Transform data to DataFeame
         split the data
+        Export the splited data
+        Data validation
         
         
