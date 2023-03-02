@@ -1,0 +1,2 @@
+git config user.name manish
+git config user.email manumi296@gmail.common

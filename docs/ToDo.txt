@@ -14,5 +14,10 @@
         split the data
         Export the splited data
         Data validation
-        
+27012023:
+    - Make Data frame from downloaded file and upload to data base. 
+    - Use the analytics and lstm on only one data then integrate the feature to search user defined stock.
+    - 
+02032023:
+    - Starting daily editing and posting to the git
         

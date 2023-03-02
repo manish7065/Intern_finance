@@ -18,7 +18,7 @@ class TrainingPipelineConfig:
         self.time_stamp = timestamp
         # self.FILE_NAME = # have to give the stock_name.csv to store in feature store
 
-# Data Ingestion Config
+# Data Ingestion Configuration 
 class DataIngestionConfig:
     """
     This class contains the methods to perforn the various functionalities of the data ingestion. 

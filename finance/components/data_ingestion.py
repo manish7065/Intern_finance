@@ -19,7 +19,7 @@ class DataIngestion:
 
     def download_stock_data(self):
         try:
-            # creating the download url
+            # Creating the download url
             api_key = '6YKJO21SVQDCYFHF' # will set it in environment
             stock="TATAMOTORS"  #will have to varry as per the user selection
             download_url =f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol={stock}.BSE&outputsize=full&apikey={api_key}"
@@ -33,12 +33,19 @@ class DataIngestion:
 
             target_file_path = os.path.join(target_download_dir,stock)
 
-            # dounload the stock data
+            # Download the stock data
 
             logging.info(f"Downloading data from {download_url} to {target_download_dir}. ")
+            
             urllib.request.urlretrieve(download_url,target_file_path)
             logging.info("Data downloaded sucessfully.")
 
+        except Exception as e:
+            raise FinanceException(e, sys)
+
+    def split_data_as_train_test(self):
+        try:
+            pass
         except Exception as e:
             raise FinanceException(e, sys)
     def export_data_into_feature_store(self):
