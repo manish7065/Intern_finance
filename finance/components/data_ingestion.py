@@ -4,8 +4,9 @@ from finance.entity.config_entity import DataIngestionConfig
 from finance.entity.artifact_entity import DataIngestionArtifact
 
 
-import os,sys
+import os,sys,json
 import urllib.request
+import pandas as pd
 
 
 
@@ -32,6 +33,7 @@ class DataIngestion:
             os.makedirs(target_download_dir,exist_ok=True)
 
             target_file_path = os.path.join(target_download_dir,stock)
+            print(target_file_path)
 
             # Download the stock data
 
@@ -39,6 +41,33 @@ class DataIngestion:
             
             urllib.request.urlretrieve(download_url,target_file_path)
             logging.info("Data downloaded sucessfully.")
+
+        except Exception as e:
+            raise FinanceException(e, sys)
+    def transform_into_data_frame(self):
+        try:
+            #Fetchinf the data dir
+            data_dir = self.data_ingestion_config.feature_store_file_path
+
+            data_file_path = os.path.join(data_dir,"TATAMOTORS")
+            print(data_file_path)
+
+            # read the JSON file
+            with open(data_file_path, 'r') as f:
+                 data = json.load(f)
+
+            # extract the column data from the JSON file
+            columns = list(data['Time Series (Daily)']['2023-02-24'].keys())
+
+            # create an empty data frame with the extracted column names
+            df = pd.DataFrame(columns=columns)
+
+            # iterate over the JSON data and add rows to the data frame
+            for date, values in data['Time Series (Daily)'].items():
+                row = [float(values[column]) for column in columns]
+                df.loc[date] = row
+
+            print(df)
 
         except Exception as e:
             raise FinanceException(e, sys)
@@ -57,10 +86,12 @@ class DataIngestion:
         except Exception as e:
             raise FinanceException(e, sys)
 
+    
     def initiate_data_ingestion(self) -> DataIngestionArtifact:
         try:
             logging.info(f"{'<<'*10}Data ingestion Starts{'>>'*10}")
             self.download_stock_data()
+            self.transform_into_data_frame()
             # self.export_data_into_feature_store()
         except Exception as e:
             raise FinanceException(e, sys)

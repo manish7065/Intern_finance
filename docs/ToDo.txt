@@ -20,4 +20,12 @@
     - 
 02032023:
     - Starting daily editing and posting to the git
+    - git pushed as proper data frame on ipynb
+    - Save the df locally in modular programming
+    - Dataframe transformation in modular programming tested
+
+Next To Do:
+    - 1. do the df transformation(Make the DF fron json) in the data_transformation
+    - 2. Remove the manual date feeding by exploering the json indexing
+    - 3. save the data in fixed location as finance project other wise a lot of data will be created in the artifact.
         
