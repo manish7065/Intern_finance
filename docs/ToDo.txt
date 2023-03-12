@@ -29,3 +29,5 @@ Next To Do:
     - 2. Remove the manual date feeding by exploering the json indexing
     - 3. save the data in fixed location as finance project other wise a lot of data will be created in the artifact.
         
+10032023:
+    - 1. 

@@ -1,5 +1,8 @@
 pandas
 numpy 
 flask
+scikit-learn
+pandas_datareader
+matplotlib
 
 -e .
