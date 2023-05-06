@@ -6,5 +6,6 @@ pandas_datareader
 matplotlib
 keras
 tensorflow
+python-dotenv
 
 -e .
