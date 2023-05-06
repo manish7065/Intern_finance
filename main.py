@@ -10,6 +10,7 @@ def index():
 def result():
     data = request.form
     option = data["options"]
+    print(f'getting the data: {option}')
 
     return render_template("result.html", option=option)
 
