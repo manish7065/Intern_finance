@@ -1,7 +1,7 @@
 from finance.logger import logging
 from finance.exception import FinanceException
 from finance.entity.config_entity import DataIngestionConfig
-from finance.entity.artifact_entity import DataIngestionArtifact
+from finance.entity.artifact_entity import DataIngestionArtifact, StockSelection
 
 
 import os,sys,json
@@ -23,6 +23,7 @@ class DataIngestion:
             # Creating the download url
             api_key = '6YKJO21SVQDCYFHF' # will set it in environment
             stock="TATAMOTORS"  #will have to varry as per the user selection
+            stock = StockSelection.stock_selected
             download_url =f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol={stock}.BSE&outputsize=full&apikey={api_key}"
 
 
@@ -48,8 +49,9 @@ class DataIngestion:
         try:
             #Fetchinf the data dir
             data_dir = self.data_ingestion_config.feature_store_file_path
+            stock_selected = StockSelection.stock_selected
 
-            data_file_path = os.path.join(data_dir,"TATAMOTORS")
+            data_file_path = os.path.join(data_dir,stock_selected)
             print(data_file_path)
 
             # read the JSON file
