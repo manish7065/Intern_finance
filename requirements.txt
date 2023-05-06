@@ -4,5 +4,7 @@ flask
 scikit-learn
 pandas_datareader
 matplotlib
+keras
+tensorflow
 
 -e .
